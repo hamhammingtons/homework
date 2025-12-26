@@ -7,19 +7,13 @@ security_log: list[tuple] = [("Alice", "Lab", "00:90"), ("badguy", "lab", "12542
 
 simplified = [k[0] for k in security_log]
 
-for people in simplified:
-    if people in blacklisted:
-        print(f'very bad, the guy "{people}" is blacklisted')
-    elif people in authorized:
-        for k in security_log:
-            name = k[0]
-            place = k[1]
-            time = k[2]
-            print(f"access granted to {place} for {place} at {time}")
+for name, place, time in security_log:
+    if name in blacklisted:
+        print(f"user is blacklisted, {name}")
+    elif name in authorized:
+        print(f"user is permitted. {name}")
     else:
-        print(
-            f"the user {people} isnt blacklisted but not permitted to use the zone at all"
-        )
+        print(f"user is not in system, {name}")
 
 print(
     authorized.difference(safety_training), "havent completed training"
