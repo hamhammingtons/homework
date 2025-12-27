@@ -70,7 +70,7 @@ while True:
 
 
 """
-Note: this wasnt written by me, by ai, but i undersntand how this works. 
+Note: this wasnt written by me, by ai (ONLY THE SECOND PART I MEANT), but i undersntand how this works. 
 
 My problem was that i realized that he wanted me to do quantity, and i didnt want to refarctor it. So for example in my initial code it
 just did the value and key, but in here i was asked to do a tuple of 
