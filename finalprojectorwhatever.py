@@ -14,9 +14,9 @@ for names in students:  # did the key and value thing
     record[names] = scores
 
 for k, v in record.items():
-    total = (v[0] - v[1]) / 2
+    total = (v[0] + v[1]) / 2  # supposed to be + not -
     print(f"{k} - average: {total}")
-    if total > passing_grade:
+    if total >= passing_grade:
         print(f"{k} passed")
     else:
         print(f"{k} didnt pass")
