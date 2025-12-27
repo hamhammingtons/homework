@@ -3,48 +3,49 @@ thisdict = {"brand": "Ford", "model": "Mustang", "year": 1964}
 newdic = {}
 
 
-class Things:  # should have specified that thisdic would be a changed_dic in an __init__ because i gotta do it manualy now
-    def ToPrint(self, changed_dic):
-        print(changed_dic)
+class Things:
+    class Things:
+        def __init__(self, dic):  # fixed this ^^^^
+            self.dic = dic
 
-    def ToCheck(self, dic, key):
-        if key in dic:
-            return True
-        else:
-            return False
+        def ToPrint(self):
+            print(self.dic)
 
-    def ToChangeValue(self, dic, key, value):
-        dic[key] = value
+        def ToCheck(self, key):
+            return (
+                key in self.dic
+            )  # no need for printing true or false because it reutrns it already
 
-    def ToUnion(self, onedic: dict, twodic: dict):
-        onedic.update(twodic)
-        print(onedic)
+        def ToChangeValue(self, key, value):
+            self.dic[key] = value
 
-    def ToUpdateValue(self, dic: dict, key, value):
-        if key in dic:
-            dic.update({key: value})
-        else:
-            print("value not found, adding a new one")
-            dic.update({key: value})
+        def ToUnion(self, other_dic: dict):
+            self.dic.update(other_dic)
+            print(self.dic)
 
-    def ToDeleteKey(self, dic: dict, key):
-        dic.pop(key)
+        def ToUpdateValue(self, key, value):
+            if key not in self.dic:
+                print("Value not found, adding a new one")
+            self.dic.update({key: value})
 
-    def ToDeleteLastItem(self, dic: dict):
-        dic.popitem()  # deletes last added item
+        def ToDeleteKey(self, key):
+            # pop() returns the value, but here we just use it to delete
+            self.dic.pop(key)
 
-    def ToReturnKeysAndValuesAndItemsInaForLoop(self, dic: dict):
-        for k in dic.keys():
-            print(k)
+        def ToDeleteLastItem(self):
+            self.dic.popitem()
 
-        for x in dic.values():
-            print(x)
+        def ToReturnAll(self):
+            for k in self.dic.keys():
+                print(f"Key: {k}")
+            for v in self.dic.values():
+                print(f"Value: {v}")
+            for k, v in self.dic.items():
+                print(f"Item: {k} -> {v}")
 
-        for key, value in dic.items():
-            print(key, value)
-
-    def Tocopy(self, dic, dic2):
-        dic2 = dict(dic)
+        def ToCopy(self):
+            # This returns a fresh copy of the dictionary
+            return self.dic.copy()
 
 
 nested = {
