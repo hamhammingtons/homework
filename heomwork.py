@@ -1,10 +1,10 @@
-import colorama
+import colorama  # type: ignore
 from inspect import getmembers, isclass, isfunction
 
 
 def inspect_colorama():
     print(f"Интроспекция библиотеки: {colorama.__name__}")
-    print(f"Версия: {colorama.__version__}")
+    print(f"Версия: {colorama.__version__}")  # type: ignore
     print("-" * 30)
 
     attributes = dir(colorama)
