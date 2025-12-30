@@ -1,8 +1,11 @@
-import requests  # type: ignore
-import json
+import requests, json  # type: ignore
 
-url = requests.get("https://jsonplaceholder.typicode.com/todos/1")
-data = url.json()
+ummm = []
+
+for i in range(1, 6):
+    reps = requests.get(f"https://jsonplaceholder.typicode.com/todos/{i}")
+    data = reps.json()
+    ummm.append(data)
 
 with open("data.json", "w") as f:
     json.dump(data, f, indent=4)
