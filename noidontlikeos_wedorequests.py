@@ -8,4 +8,4 @@ for i in range(1, 6):
     ummm.append(data)
 
 with open("data.json", "w") as f:
-    json.dump(data, f, indent=4)
+    json.dump(ummm, f, indent=4)
