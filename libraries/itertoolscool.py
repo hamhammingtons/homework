@@ -31,9 +31,7 @@ print("\n")
 
 topointout("combinations")
 
-for i in combinations(
-    items, 2
-):  # order deosnt matter so for example ex: a,b: a,c: a,d ||| b,a: b,c...
+for i in combinations(items, 2):  # same as permutations but order doesnt matter
     var1, var2 = i
     print(f"var1: {var1}\nvar 2: {var2}", "\tnote:" + str(i), "\n")
 
@@ -45,7 +43,7 @@ topointout("permutations")
 
 print(
     list(permutations(items, 2))
-)  # for all combinations like a nested for loop (order matters)
+)  # for all combinations like a nested for loop (order matters) example ex: a,b: a,c: a,d ||| b,a: b,c...
 
 topointout("permutations")
 
