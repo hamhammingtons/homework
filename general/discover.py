@@ -30,24 +30,27 @@ print(to_sum(3, 4, 5, sum_plus_minus_first=True))
 print(to_sum(3, 4, 5, sum_plus_minus_first=False))
 
 
-def decorator(func):
+def to_output(func):
     def wrapper(*args, **kwargs):
-        print("calling", func.__name__)
-        result = func(*args, **kwargs)
-        return result
+        print("func called:", func.__name__)
+        print(
+            f"args: {len(args)}"
+            if args and not kwargs
+            else (
+                f"kwargs: {len(kwargs)}"
+                if kwargs and not args
+                else (f"args: {args}, kwargs: {kwargs}" if kwargs and args else 0)
+            )
+        )
+        return func(*args, **kwargs)
 
     return wrapper
 
 
-@decorator
-def dosum(*args):
-    print("doing something")
-    return sum(*args)
+@to_output
+def todo(msg, **kwar):
+    return "it ok sir"
 
 
-output = dosum([1, 2, 3, 4])
-print("Result:", output)
-
-k = [[col for col in range(1, 10)] for row in range(1, 4)]
-
-print(k)
+print(todo("hi", ty="ok"))
+# why does autocomplete do this shit
