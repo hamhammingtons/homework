@@ -47,3 +47,7 @@ def dosum(*args):
 
 output = dosum([1, 2, 3, 4])
 print("Result:", output)
+
+k = [[col for col in range(1, 10)] for row in range(1, 4)]
+
+print(k)
