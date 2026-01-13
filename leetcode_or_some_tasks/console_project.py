@@ -5,7 +5,7 @@ import socket  # using this we'll get the user and thats it, i dont know the thi
 
 
 class Console:
-    def __init__(self, user, commands) -> None:
+    def __init__(self) -> None:
         self.user = socket.gethostname()
         self.commands = {
             "echo": (
@@ -31,16 +31,24 @@ class Console:
                 continue
 
             if name in self.commands:
-                assigned_func = self.commands[name]  # we find that func
+                assigned_func = self.commands[
+                    name
+                ]  # we find that func [ 1 use case unfortuanetly]
                 func, params_allowed, uid = assigned_func
                 try:
-                    if len(user_input[1:]) != params_allowed:
+                    if len(args) != params_allowed:
                         print(
-                            f"ERR_T: 2, func {user_input} exceeds parameters fit in found func: {assigned_func}, \n\t {assigned_func} takes {params_allowed}, not {user_input[1:]}"
-                        )
+                            f"ERR_T: 2, func {name} exceeds parameters fit in found func: {func.__name__}, \n\t {func.__name__} takes {params_allowed} {"pararameters" if params_allowed > 1 else "parameter"}, not {args}"
+                        )  # ^^^ fixed the object at... problem with func.__name__ dunder method
                     else:
-                        func(args, unique_id=uid)
+                        func(arg_list=args, unique_id=uid)
                 except Exception as ex:
                     return "fatal eerro: ", ex
             else:
-                return f"ERR_T: 1, func {user_input} with params {user_input[1:]} not found. "
+                print(
+                    f"ERR_T: 1, func {user_input} with params {user_input[1:]} not found. "
+                )
+
+
+new_c = Console()
+new_c.to_run()
