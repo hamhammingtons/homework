@@ -12,23 +12,34 @@ class Console:
                 self.echo_func,
                 1,
                 12,
-            )  # where 1 is the ammount of params, 12 is unqique id
+            ),
+            "whosme": (
+                self.whosme,
+                0,
+                31,
+            ),  # where 1 is the ammount of params, 12 is unqique id
         }
         self.cur_command = ""  # we will set it as an index of self commands some time
 
     def echo_func(self, arg_list, unique_id):
         print(" ".join(arg_list))
 
+    def whosme(self, arg_list, unique_id):
+        print(self.user)
+
     def to_run(self):
         while True:
+
             user_input = input("> ").split()  # list
+            if not user_input:
+                continue
+
             name = user_input[0]  # name of func
-            args = user_input[1:]  # its arguments
 
             if name == "exit":  # exceptions
                 break
-            elif not user_input:
-                continue
+
+            args = user_input[1:]  # its arguments
 
             if name in self.commands:
                 assigned_func = self.commands[
@@ -43,7 +54,7 @@ class Console:
                     else:
                         func(arg_list=args, unique_id=uid)
                 except Exception as ex:
-                    return "fatal eerro: ", ex
+                    print("fatal error: ", ex)
             else:
                 print(
                     f"ERR_T: 1, func {user_input} with params {user_input[1:]} not found. "
