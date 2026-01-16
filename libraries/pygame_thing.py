@@ -25,3 +25,5 @@ while running:
 
 pygame.quit()
 sys.exit()
+
+# TODO: Learn something basic first then come back to this, like requests with bs4
