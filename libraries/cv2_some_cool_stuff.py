@@ -21,8 +21,8 @@ cv2.destroyAllWindows()
 # +----------------+-------------------------+------------------------------+
 # | METHOD         | PURPOSE                 | KEY PARAMETERS               |
 # +----------------+-------------------------+------------------------------+
-# | imread()       | Load image from disk    | (path)                       |
-# |                |                         | Example: "folder/image.jpg" |
+# | imread()       | Load image from disk    | (relative path)              |
+# |                |                         | Example: "folder/image.jpg"  |
 # |                |                         |                              |
 # | cvtColor()     | Convert color space     | (src, cv2.COLOR_BGR2GRAY)    |
 # |                |                         | Turns color → grayscale      |
@@ -37,7 +37,8 @@ cv2.destroyAllWindows()
 # |                |                         |                              |
 # | imshow()       | Show image in window    | ("WindowName", image)        |
 # |                |                         |                              |
-# | waitKey()      | Pause program           | (0) = wait forever           |
+# | waitKey()      | Pause program           | (0) = wait forever until a   |
+#                 |                          |                 key is pressed|
 # |                |                         |                              |
 # | destroyAll...  | Close all OpenCV        | Frees memory                 |
 # |                | windows                 |                              |
