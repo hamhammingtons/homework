@@ -2,19 +2,21 @@ import cv2
 
 file = cv2.imread(r"contents_imgAndEtc\canny.jpg")
 
-gray = cv2.cvtColor(file, cv2.COLOR_BGR2GRAY)
+gray = cv2.cvtColor(file, cv2.COLOR_BGR2GRAY)  # type: ignore
 
 uncanny = cv2.Canny(gray, 50, 70)
 
 blur = cv2.GaussianBlur(gray, (5, 5), 0)
 edges = cv2.Canny(blur, 50, 150)
-cv2.imshow("Original", file)
+cv2.imshow("Original", file)  # type: ignore
 cv2.imshow("Gray", gray)
 cv2.imshow("Canny", uncanny)
 cv2.imshow("actually", edges)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 
+# TODO: watch this: "https://www.youtube.com/watch?v=eDIj5LuIL4A" -- 3 hours long
+# or do
 # =========================================================================
 #                         MINI CHEATSHEET
 # =========================================================================
