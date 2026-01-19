@@ -43,3 +43,5 @@ for directory_path, directory_names, file_names in os.walk(mypath):
     print(
         f'Directory path: {directory_path},\n "directory names: {directory_names} \n "filenames: {file_names}'
     )
+
+# 12 : 18 stopped wathching
