@@ -35,4 +35,4 @@ class Encryptor(DataVault):
 
 
 secret = Encryptor(10, 2, 5)
-print(secret)
+print("Secret computation completed")
