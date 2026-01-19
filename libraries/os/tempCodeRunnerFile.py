@@ -1,0 +1,2 @@
+
+                    func(self, params)
