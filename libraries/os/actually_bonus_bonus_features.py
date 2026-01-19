@@ -13,7 +13,6 @@ notepad_path = os.path.join(
     system_folder, "System32", "notepad.exe"  # type: ignore
 )  # type: ignore # same thing but with join, which is safer
 
-# This is much safer than the WindowsApps path!
 os.startfile(notepad_path)
 
 
