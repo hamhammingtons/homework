@@ -62,4 +62,4 @@ if os.path.exists("Hello"):
 os.chdir("Hello")  # make sure to change directory before changing anything
 os.rename("note.txt", "HelloHello.txt")
 
-# TODO: i went to bed after the '5:46' mark of the video 'https://www.youtube.com/watch?v=tJxcKyFMTGo' so continue watching it tommorow
+# finished
