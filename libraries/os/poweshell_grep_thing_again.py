@@ -27,14 +27,4 @@ os.system(f"grep 'this' {file} > test_item.txt")  # works! its for like logging 
 # so 1st part is the expressions and then we save it into the file.
 
 
-# but what if we want to
-# 1. find a thing inside a file using grep first, store it into a variable
-# 2. do column -t on it so it looks good
-messy_data = "ID Name Department\n1 Alice Engineering\n2 Bob HR"
-
-# This creates the file 'note.txt' with the formatted table
-os.system(f'echo "{messy_data}" | column -t > note.txt')
-
-print("Table saved to note.txt!")
-# no works, fix tommorw
-# TODO: do the thing we want to do "but what if we want to..."
+# no
