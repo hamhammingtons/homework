@@ -17,3 +17,5 @@ for line in data:
         print(clean)
     else:
         print(None)
+
+# TODO: learn again
