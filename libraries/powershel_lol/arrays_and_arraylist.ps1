@@ -14,8 +14,8 @@ $myArray.IsFixedSize
 
 $myArray[1] # 0 based index like in python VERY good! IF OUT OF RANGE DOESNT PRINT OUT ANYTHING, unless you do strict mode
 
-$myArray+="elloNEW" # or $my=$my+"fewf"
-$myArray=$myArray -ne "test2" # so its like- Make a list where in that list "test2" is false. which means it pops it.
+$myArray += "elloNEW" # or $my=$my+"fewf"
+$myArray = $myArray -ne "test2" # so its like- Make a list where in that list "test2" is false. which means it pops it.
 # also i like how it is like dictionary method of selecting item(by mentioning them) ive never seen that before in lists
 # cannot pop by index
 
@@ -34,13 +34,13 @@ $myList2.Add("HelloWorld") # btw .add returns an index in the terminal. you will
 # so no index in the output!
 Write-Host ""
 
-$myList2.AddRange(@("test1","test3","fat")) # to add multiple items at once. 
+$myList2.AddRange(@("test1", "test3", "fat")) # to add multiple items at once. 
 Write-Host "Full item list before deletion:"
 $myList2
 Write-Host "Removing starts here"
 $myList2.Remove("test3") # to delete a specific item. Only the first instance of that element will be removed!
 $myList2.RemoveAt(0) # for using index to delete
-$myList2.RemoveRange(0,2) # makes a slice on where to remove. ex [0-start_index, 2-items_to_cut]
+$myList2.RemoveRange(0, 2) # makes a slice on where to remove. ex [0-start_index, 2-items_to_cut]
 # if 1 == items to cut - then we just cut the index, this is a NOTE
 Write-Host ""
 $myList2
@@ -51,7 +51,7 @@ $arrList = @()
 $betterArray = New-Object -TypeName System.Collections.ArrayList
 
 # Measure-Command -Expression {@(0..50000).ForEach({$arrList+=$_})} # takes like 1m:17s for an array
-Measure-Command -Expression {$betterArray.AddRange(@(0..50000))} # 18 milliseconds for an array-list!
+Measure-Command -Expression { $betterArray.AddRange(@(0..50000)) } # 18 milliseconds for an array-list!
 
 #AI COMMANDS: NEW
 
