@@ -47,7 +47,28 @@ $myList2
 $myList2.Count # we cant use length here. Only count = len(). 
 
 
-$arrList = @()
+<#
+.SYNOPSIS
+    Initializes a new ArrayList object for dynamic array operations.
+
+.DESCRIPTION
+    Creates an instance of System.Collections.ArrayList, which provides a resizable
+    collection that can dynamically grow or shrink as elements are added or removed.
+    Unlike native PowerShell arrays, ArrayLists are mutable and more efficient for
+    operations involving frequent additions/removals.
+
+.EXAMPLE
+    $betterArray = New-Object -TypeName System.Collections.ArrayList
+    $betterArray.Add("item1") | Out-Null
+
+.NOTES
+    - Use ArrayList when you need frequent add/remove operations
+    - Remember to pipe Add() method output to Out-Null to suppress index output
+    - For static collections, native PowerShell arrays are typically more idiomatic
+
+.LINK
+    https://docs.microsoft.com/en-us/dotnet/api/system.collections.arraylist
+#>
 $betterArray = New-Object -TypeName System.Collections.ArrayList
 
 # Measure-Command -Expression {@(0..50000).ForEach({$arrList+=$_})} # takes like 1m:17s for an array
