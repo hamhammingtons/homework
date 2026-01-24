@@ -50,4 +50,10 @@ $myList2.Count # we cant use length here. Only count = len().
 $arrList = @()
 $betterArray = New-Object -TypeName System.Collections.ArrayList
 
-Measure-Command -Expression {@(0..50000).ForEach({$arrList+=$_})}
+# Measure-Command -Expression {@(0..50000).ForEach({$arrList+=$_})} # takes like 1m:17s for an array
+Measure-Command -Expression {$betterArray.AddRange(@(0..50000))} # 18 milliseconds for an array-list!
+
+#AI COMMANDS: NEW
+
+$myList2.Contains("fat") # like an if "item" in list: but much more simple [True/False]
+$myList2.IndexOf("fat") # returns an index if found
