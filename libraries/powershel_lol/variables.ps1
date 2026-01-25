@@ -28,7 +28,7 @@ $hello = $true # ^^^
 
 ($tV -eq $fV) # -eq = equals to, basically ==
 # you can also mass attach to check types for example
-# ($tV -eq $fV).GetType() -- type bool
+# ($tV -eq $fV).GetType() -- type bool [true or false]
 
 ($nothingNull -eq $null) # you can also do type checking with just this!
 
