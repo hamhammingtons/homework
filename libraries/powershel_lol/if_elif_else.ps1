@@ -49,9 +49,28 @@ if((Test-Path -Path $filePath) -eq $true) {
     } elseif($dData.Count -le 3) {
         Write-Output "this file has 3 or less than 3 lines"
     } else {
-        Write-Host "this file has $dData.Count lines"
+        Write-Host "this file has $($dData.Count) lines"
     }
     # like with open()...
 } else{
     Write-Output "File $filePath doesnt exist!" # again no f string needed
 }
+
+
+################## NEW DISCCOVERY ############# 
+
+#so you know youve got like \n in python right 
+# you can do `n to do the same thing
+# its called backticks 
+
+
+# thing 
+
+$processChrome = Get-Process chrome -ErrorAction SilentlyContinue
+
+if($processChrome -and $processChrome.CPU -gt 0){
+    Write-Host "Chrome is active! CPU usage is: $($processChrome[0].CPU)" -ForegroundColor Green
+} # we do indexing in arrays
+
+# this is where we use Get-Process instead of tasklist | grep ".."
+# also this is where i used \n as `n 

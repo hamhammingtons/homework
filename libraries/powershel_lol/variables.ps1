@@ -6,7 +6,7 @@ $myVariable = "Jocker MR man" # variables start with $
 $intVariable = 1 # int is a 32 bit integer
 $doubleVariable = 1.14 # double is a float 
 
-$newVar=$myVariable.ToLower() # when you do just $myvariable.lower() it doesnt change myvariable, it just prints out it lowered
+$newVar = $myVariable.ToLower() # when you do just $myvariable.lower() it doesnt change myvariable, it just prints out it lowered
 # so here i assign it instead ^^^ 
 $newVar.GetType()
 $intVariable.GetType()
