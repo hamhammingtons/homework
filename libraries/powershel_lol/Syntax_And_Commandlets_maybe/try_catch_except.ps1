@@ -6,7 +6,7 @@ try {
     
     $path = "C:\NonExistentFolder\data.txt"
     # This will fail and jump immediately to 'catch'
-    $content = Get-Content -Path $path 
+    $content = Get-Content -Path $path
 
     Write-Host "This line will NEVER run if the command above fails."
 } 
