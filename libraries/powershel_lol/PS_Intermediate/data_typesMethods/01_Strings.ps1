@@ -9,7 +9,7 @@ $defaultString.ToLower()
 
 #Searching and logic 
 
-$defaultString.StartsWith("Hello") # if it starts with this 
+$defaultString.StartsWith("Hello") # if it starts with this
 $defaultString.EndsWith("alex") # if it ends with this 
 $defaultString.Contains("there") # if it has this
 $defaultString.IndexOf("im") # find first index of this 
@@ -26,7 +26,7 @@ $defaultString.Substring(3, 5) # gets a start index of 3 and then how much to gr
 $arrayOf_items = $defaultString.Split() # same as python
 $arrayOf_items
 
-$backTostring = $arrayOf_items -join " | " # basically like "".join() but here its -join
+$backTostring = $arrayOf_items -join " | " # basically like "|".join() but here its -join
 $backTostring
 
 $defaultString.PadRight(10, "-") # like doing str * 10 or "-" * 10 

@@ -12,16 +12,17 @@ $data = Get-Content -Path $fileNames
 # if you want to check if a path exists 
 
 #if((Test-Path -Path "$folderPath[0]/$($data)") -eq $false){
-    #add item... 
+#add item... 
 # }else{
-    #Write-Output "Already exists"
+#Write-Output "Already exists"
 # }
 
 
-foreach($name in $data){ 
-    if(-not(Test-Path -Path "$folderPath/$name")){
+foreach ($name in $data) { 
+    if (-not(Test-Path -Path "$folderPath/$name")) {
         New-Item -Path $folderPath -Name $name -ItemType Directory
-    } else {
+    }
+    else {
         Write-Host "Folder '$name' already exists!" -ForegroundColor Yellow
     }
 }
@@ -30,24 +31,26 @@ foreach($name in $data){
 # python: for i in ... but here we do foreach($iter in $...)
 
 $fileNames | ForEach-Object -Process {
-    if(-not(Test-Path -Path "$folderPath/$_")){
+    if (-not(Test-Path -Path "$folderPath/$_")) {
         New-Item -Path $folderPath -Name $_ -ItemType Directory
-    } else {
+    }
+    else {
         Write-Host "Folder '$name' already exists!" -ForegroundColor Yellow
     }
 }
 
 $data.ForEach( # BEST METHOD!!!
     {
-        if(-not(Test-Path -Path "$folderPath/$_")){
+        if (-not(Test-Path -Path "$folderPath/$_")) {
             New-Item -Path $folderPath -Name $_ -ItemType Directory
-        } else {
+        }
+        else {
             Write-Host "Folder '$name' already exists!" -ForegroundColor Yellow
         }
     }
 )
 
 
-$filtered = $data | ? { $_ -like "k*" }
+$filtered = $data | Where-Object { $_ -like "k*" }
 # ? == where object
 $filtered
