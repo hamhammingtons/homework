@@ -19,5 +19,13 @@ $neededTopass = @{
     Verbose     = $true
 }
 
-# Copy-Item @neededTopass -- if we already assign the keys they will be passed into copy-item correctly if theyre 
+# Copy-Item @neededTopass -- ^^^^ if we already assign the keys they will be passed into copy-item correctly if theyre 
 # correctly set up (the keys should be actual parameters in a commandlet)
+
+#Another example
+#$folderConfig = @{
+#   Path     = "$env:USERPROFILE\Desktop\NewLabFolder"
+#   sItemType = "Directory"
+#}
+
+#New-Item @folderConfig
